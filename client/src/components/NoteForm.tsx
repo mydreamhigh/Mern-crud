@@ -9,11 +9,11 @@ const initialState = {
 export function NoteForm() {
   const [note, setNote] = useState(initialState);
   const addNote = trpc.note.create.useMutation();
-  const utils = trpc.useContext();
+  const utils = trpc.useContext();       
   const titleRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>             
   ) => setNote({ ...note, [e.target.name]: e.target.value });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
